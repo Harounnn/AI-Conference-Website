@@ -33,14 +33,39 @@
 
     <br>
 
-    <p>
-        Here&rsquo;s where you provide instructions how to register for your conference.
-        We used a <a href="https://www.google.com/forms/about/">Google Form</a> 
-        and embedded it into an <i>iframe</i> (it&rsquo;s commented out in the html here).
-    </p>
+    <form id="myForm">
+        <div class="input-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
 
-    <p>hhhhhhhhhhhhhhhhhhhh</p>
+    <script>
+        const form = document.getElementById('myForm');
+        const submitButton = form.querySelector('button');
 
+        submitButton.addEventListener('click', (event) => {
+            if (!form.checkValidity()) {
+                event.preventDefault(); // Prevent form submission if validation fails
+                form.classList.add('error'); // Add error class for styling
+                setTimeout(() => form.classList.remove('error'), 2000); // Remove error class after 2 seconds
+            } else {
+                // Handle valid form submission here
+                // (e.g., submit data to server, display success message)
+                form.reset(); // Clear form fields on successful submission
+            }
+        });
+    </script>
+      
 </body>
 </html>
 

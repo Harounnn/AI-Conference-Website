@@ -127,3 +127,66 @@ footer{font-size:0.875em; margin-top:12em; text-align:center;}
     table.footer{font-size:0.33em;}
 }
 
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #42A047;
+}
+
+.error {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-2px);
+    }
+    2% {
+        transform: translateX(2px);
+    }
+    4% {
+        transform: translateX(-4px);
+    }
+    6% {
+        transform: translateX(4px);
+    }
+    8% {
+        transform: translateX(-6px);
+    }
+    10% {
+        transform: translateX(6px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
